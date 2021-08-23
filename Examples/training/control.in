@@ -1,0 +1,38 @@
+#########################################################################
+# Col  Description
+#########################################################################
+# 1    Atomic symbol
+# 2    Atomic number
+# 3    Atomic mass 
+# 4    Path of the file with the symmetry functions parameters
+#########################################################################
+
+mode                          training
+cut_function_type             2
+angular_sf                    wide
+atomic_data_path              input.data
+length_unit                   Ang
+number_of_atom_types          3
+model_path                    none
+neurons_per_layer             [15, 15, 1]
+activation_function           hyperbolic_tangent_with_linear_twist
+weight_initialization         random_uniform
+bias_initialization           zeros
+random_seed                   10
+optimization_method           Adagrad
+learning_rate                 0.005
+epsilon                       1e-08
+decay_value                   0.0
+clipvalue                     1.0
+loss_function                 mse
+number_of_epochs              500
+minibatch_size                10
+validation_fraction           0.1
+
+#########################################################################
+#               1   2    3     4
+#########################################################################
+
+atom_type_1     H   1   1.0008    H-SymFunc.smf
+atom_type_2     O   8   16.999    O-SymFunc.smf
+atom_type_3     Al  13  26.982    Al-SymFunc.smf
